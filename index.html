@@ -10,6 +10,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             overflow: hidden;
             font-family: 'Pattaya', sans-serif;
@@ -57,13 +58,22 @@
             50% { transform: translateY(-200px) scale(1); opacity: 0.7; }
             100% { transform: translateY(-400px) scale(1.5); opacity: 0; }
         }
+
+        .audio-only {
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            position: absolute;
+        }
     </style>
 </head>
 <body>
 
     <div class="marquee-container">
-        <div class="marquee">💖 โอ๋เอ๋ๆ ง้อครับ ป้าวิน 💖</div>
+        <div class="marquee">💖 รักนะครับ ต้าววิน 💖</div>
     </div>
+
+    <iframe class="audio-only" src="https://www.youtube.com/embed/OYPiXBIgvJ8?autoplay=1&loop=1&playlist=OYPiXBIgvJ8" allow="autoplay"></iframe>
 
     <div class="hearts"></div>
 
