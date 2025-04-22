@@ -59,6 +59,20 @@
             100% { transform: translateY(-400px) scale(1.5); opacity: 0; }
         }
 
+        .play-button {
+            font-size: 3rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #ff4081;
+            transition: transform 0.2s ease;
+            margin-top: 20px;
+        }
+
+        .play-button:hover {
+            transform: scale(1.2);
+        }
+
         .audio-only {
             width: 1px;
             height: 1px;
@@ -73,7 +87,9 @@
         <div class="marquee">💖 รักนะครับ ต้าววิน 💖</div>
     </div>
 
-    <iframe class="audio-only" src="https://www.youtube.com/embed/OYPiXBIgvJ8?autoplay=1&loop=1&playlist=OYPiXBIgvJ8" allow="autoplay"></iframe>
+    <button class="play-button" onclick="playMusic()">💖</button>
+
+    <div id="musicContainer"></div>
 
     <div class="hearts"></div>
 
@@ -90,6 +106,21 @@
         }
 
         setInterval(createHeart, 300);
+
+        let isPlaying = false;
+
+        function playMusic() {
+            const container = document.getElementById('musicContainer');
+
+            if (!isPlaying) {
+                const iframe = document.createElement('iframe');
+                iframe.className = 'audio-only';
+                iframe.src = "https://www.youtube.com/embed/OYPiXBIgvJ8?autoplay=1&loop=1&playlist=OYPiXBIgvJ8";
+                iframe.allow = "autoplay";
+                container.appendChild(iframe);
+                isPlaying = true;
+            }
+        }
     </script>
 
 </body>
