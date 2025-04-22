@@ -14,12 +14,13 @@
             height: 100vh;
             overflow: hidden;
             font-family: 'Pattaya', sans-serif;
+            position: relative;
         }
 
         .marquee-container {
-            position: relative;
             width: 100%;
             overflow: hidden;
+            margin-bottom: 20px;
         }
 
         .marquee {
@@ -36,6 +37,20 @@
             to { transform: translateX(-100%); }
         }
 
+        .play-button {
+            font-size: 3rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #ff4081;
+            transition: transform 0.2s ease;
+            z-index: 10;
+        }
+
+        .play-button:hover {
+            transform: scale(1.2);
+        }
+
         .hearts {
             position: absolute;
             top: 0;
@@ -43,6 +58,8 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
+            transform: translateX(-50%);
+            z-index: 1;
         }
 
         .heart {
@@ -59,20 +76,6 @@
             100% { transform: translateY(-400px) scale(1.5); opacity: 0; }
         }
 
-        .play-button {
-            font-size: 3rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: #ff4081;
-            transition: transform 0.2s ease;
-            margin-top: 20px;
-        }
-
-        .play-button:hover {
-            transform: scale(1.2);
-        }
-
         .audio-only {
             width: 1px;
             height: 1px;
@@ -87,7 +90,7 @@
         <div class="marquee">💖 รักนะครับ ต้าววิน 💖</div>
     </div>
 
-    <button class="play-button" onclick="playMusic()">💖</button>
+    <button class="play-button" onclick="playMusic()">💖 กดหัวใจเพื่อเล่นเพลง 💖</button>
 
     <div id="musicContainer"></div>
 
